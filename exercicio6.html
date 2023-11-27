@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+    <link rel="shortcut icon" href="img/favicon_atividade_pw.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <ul class="barra-navegacao" style="margin: 0;">
+            <li class="barra-navegacao-logo">
+                <a href="index.html">
+                    <img src="img/logo_atividade_pw.png" alt="">
+                </a>
+            </li>
+            <ul class="barra-navegacao-lista">
+                <li><a href="index.html" class="barra-navegacao-link">Exercícios</a></li>
+                <li><a href="jogo.html" class="barra-navegacao-link">Jogo</a></li>
+                <li><a href="#" class="barra-navegacao-link">GitHub</a></li>
+            </ul>
+        </ul>
+        <div class="menu-icone">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+    </header>
+    
+    <script>
+        function pesoHomens() {
+            var altura = parseFloat(document.getElementById('altura').value);
+            let peso_ideal = 0;
+            peso_ideal = (72.7 * altura - 58).toFixed(1);
+            var a = document.createTextNode("Seu peso ideal é "+peso_ideal+"kg");
+            document.getElementById('peso-ideal').appendChild(a);
+        }
+        function pesoMulheres() {
+            var altura = parseFloat(document.getElementById('altura').value);
+            let peso_ideal = 0;
+            peso_ideal = (62.1 * altura - 44.7).toFixed(1);
+            var b = document.createTextNode("Seu peso ideal é "+peso_ideal+"kg");
+            document.getElementById('peso-ideal').appendChild(b);
+        }
+    </script>
+
+    <div class="recipiente-form1">
+        <form action="" method="post" class="painel-form1">
+            <p class="instrucao-form1">Digite a altura em metros:</p>
+            <input type="number" id="altura" class="input1-form1">
+            <br><br>
+            <input class="botao-form" type="button" value="Calcular peso ideal para homens" onclick="pesoHomens()">
+            <input class="botao-form" type="button" value="Calcular peso ideal para mulheres" onclick="pesoMulheres()">
+            <input class="botao-form" type="button" value="Limpar" onclick="window.location.reload()">
+            <br>
+            <p id="peso-ideal"></p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Atividade de PW</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

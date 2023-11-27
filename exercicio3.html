@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <link rel="shortcut icon" href="img/favicon_atividade_pw.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <ul class="barra-navegacao" style="margin: 0;">
+            <li class="barra-navegacao-logo">
+                <a href="index.html">
+                    <img src="img/logo_atividade_pw.png" alt="">
+                </a>
+            </li>
+            <ul class="barra-navegacao-lista">
+                <li><a href="index.html" class="barra-navegacao-link">Exercícios</a></li>
+                <li><a href="jogo.html" class="barra-navegacao-link">Jogo</a></li>
+                <li><a href="#" class="barra-navegacao-link">GitHub</a></li>
+            </ul>
+        </ul>
+        <div class="menu-icone">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+    </header>
+    
+    <script>
+        function produtosTotal() {
+            var valor1 = parseFloat(document.getElementById('valor1').value);
+            var valor2 = parseFloat(document.getElementById('valor2').value);
+            var valor3 = parseFloat(document.getElementById('valor3').value);
+            var quantidade1 = parseFloat(document.getElementById('quantidade1').value);
+            var quantidade2 = parseFloat(document.getElementById('quantidade2').value);
+            var quantidade3 = parseFloat(document.getElementById('quantidade3').value);
+            let valor_total = 0;
+            valor_total = (valor1 * quantidade1 + valor2 * quantidade2 + valor3 * quantidade3).toFixed(2);
+            var a = document.createTextNode("O valor total da venda é R$"+valor_total);
+            document.getElementById('valor-total').appendChild(a);
+        }
+    </script>
+
+    <div class="recipiente-form1">
+        <form action="" method="post" class="painel-form1">
+            <h1>1°Produto</h1>
+            <br>
+            <p class="instrucao-form1">Digite o nome do produto:</p>
+            <input type="text" id="nome1" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite o valor do produto:</p>
+            <input type="number" id="valor1" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite a quantidade vendida:</p>
+            <input type="number" id="quantidade1" class="input1-form1">
+            <br><br>
+            <h1>2°Produto</h1>
+            <br>
+            <p class="instrucao-form1">Digite o nome do produto:</p>
+            <input type="text" id="nome2" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite o valor do produto:</p>
+            <input type="number" id="valor2" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite a quantidade vendida:</p>
+            <input type="number" id="quantidade2" class="input1-form1">
+            <br><br>
+            <h1>3°Produto</h1>
+            <br>
+            <p class="instrucao-form1">Digite o nome do produto:</p>
+            <input type="text" id="nome3" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite o valor do produto:</p>
+            <input type="number" id="valor3" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite a quantidade vendida:</p>
+            <input type="number" id="quantidade3" class="input1-form1">
+            <br><br>
+            <input class="botao-form" type="button" value="Calcular o valor total da venda" onclick="produtosTotal()">
+            <br>
+            <input class="botao-form" type="button" value="Limpar" onclick="window.location.reload()">
+            <br>
+            <p id="valor-total"></p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Atividade de PW</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

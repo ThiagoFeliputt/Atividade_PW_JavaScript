@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+    <link rel="shortcut icon" href="img/favicon_atividade_pw.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <ul class="barra-navegacao" style="margin: 0;">
+            <li class="barra-navegacao-logo">
+                <a href="index.html">
+                    <img src="img/logo_atividade_pw.png" alt="">
+                </a>
+            </li>
+            <ul class="barra-navegacao-lista">
+                <li><a href="index.html" class="barra-navegacao-link">Exercícios</a></li>
+                <li><a href="jogo.html" class="barra-navegacao-link">Jogo</a></li>
+                <li><a href="#" class="barra-navegacao-link">GitHub</a></li>
+            </ul>
+        </ul>
+        <div class="menu-icone">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+    </header>
+    
+    <script>
+        function calcularCusto() {
+            var comprimento = parseInt(document.getElementById('comprimento').value);
+            var largura = parseInt(document.getElementById('largura').value);
+            let preco_piso = 0;
+            preco_piso = (comprimento * largura * 36).toFixed(2);
+            var a = document.createTextNode("O preço para assentar o piso deste cômodo é R$"+preco_piso);
+            document.getElementById('preco-piso').appendChild(a);
+        }
+    </script>
+
+    <div class="recipiente-form1">
+        <form action="" method="post" class="painel-form1">
+            <p class="instrucao-form1">Digite o comprimento do cômodo em metros:</p>
+            <input type="number" id="comprimento" class="input1-form1">
+            <br><br>
+            <p class="instrucao-form1">Digite a largura do cômodo em metros:</p>
+            <input type="number" id="largura" class="input1-form1">
+            <br><br>
+            <div class="botao-lado">
+                <input class="botao-form" type="button" value="Calcular o custo" onclick="calcularCusto()">
+                <input class="botao-form" type="button" value="Limpar" onclick="window.location.reload()">
+            </div>
+            <br>
+            <p id="preco-piso"></p>
+        </form> 
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Atividade de PW</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

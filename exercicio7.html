@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+    <link rel="shortcut icon" href="img/favicon_atividade_pw.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <ul class="barra-navegacao" style="margin: 0;">
+            <li class="barra-navegacao-logo">
+                <a href="index.html">
+                    <img src="img/logo_atividade_pw.png" alt="">
+                </a>
+            </li>
+            <ul class="barra-navegacao-lista">
+                <li><a href="index.html" class="barra-navegacao-link">Exercícios</a></li>
+                <li><a href="jogo.html" class="barra-navegacao-link">Jogo</a></li>
+                <li><a href="#" class="barra-navegacao-link">GitHub</a></li>
+            </ul>
+        </ul>
+        <div class="menu-icone">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+    </header>
+    
+    <script>
+        var lista = []
+        function armazenar() {
+            let valor = document.getElementById('valor').value;
+            lista.push(valor);
+            document.getElementById('valor').value = "";
+            document.getElementById('valor').focus();
+        }
+        function exibirNumeros() {
+            var res = document.getElementById('res');
+            res.innerHTML = "";
+            for (let i = 0; i < lista.length; i++) {
+                res.innerHTML += lista[i] + "-";
+            }
+            document.getElementById('valor').focus();
+        }
+        function exibirMaior() {
+            var maior = Math.max.apply(null, lista );
+            document.getElementById( 'maior-valor' ).innerHTML = maior;
+        }
+        function exibirMenor() {
+            var menor = Math.min.apply(null, lista );
+            document.getElementById( 'menor-valor' ).innerHTML = menor;
+        }
+    </script>
+
+    <div class="recipiente-form1">
+        <form action="" method="post" class="painel-form1">
+            <p class="instrucao-form1">Digite números:</p>
+            <input type="number" id="valor" class="input1-form1">
+            <br><br>
+            <input class="botao-form" type="button" value="Inserir" onclick="armazenar()">
+            <input class="botao-form" type="button" value="Exibir números" onclick="exibirNumeros()">
+            <input class="botao-form" type="button" value="Exibir maior número" onclick="exibirMaior()">
+            <input class="botao-form" type="button" value="Exibir menor número" onclick="exibirMenor()">
+            <input class="botao-form" type="button" value="Limpar" onclick="window.location.reload()">
+            <br>
+            <p id="res"></p>
+            <p id="maior-valor"></p>
+            <p id="menor-valor"></p>
+        </form> 
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Atividade de PW</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

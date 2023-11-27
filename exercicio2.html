@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <link rel="shortcut icon" href="img/favicon_atividade_pw.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <ul class="barra-navegacao" style="margin: 0;">
+            <li class="barra-navegacao-logo">
+                <a href="index.html">
+                    <img src="img/logo_atividade_pw.png" alt="">
+                </a>
+            </li>
+            <ul class="barra-navegacao-lista">
+                <li><a href="index.html" class="barra-navegacao-link">Exercícios</a></li>
+                <li><a href="jogo.html" class="barra-navegacao-link">Jogo</a></li>
+                <li><a href="#" class="barra-navegacao-link">GitHub</a></li>
+            </ul>
+        </ul>
+        <div class="menu-icone">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+    </header>
+    
+    <script>
+        function converter1() {
+            var temperatura = parseInt(document.getElementById('n-temperatura').value);
+            let temperatura_final = 0;
+            temperatura_final = (temperatura - 32) / 1.8;
+            var a = document.createTextNode(temperatura_final.toFixed(2)+"°C");
+            document.getElementById('resposta').appendChild(a);
+        }
+        function converter2() {
+            var temperatura = parseInt(document.getElementById('n-temperatura').value);
+            let temperatura_final = 0;
+            temperatura_final = temperatura * 1.8 + 32;
+            var a = document.createTextNode(temperatura_final.toFixed(2)+"°F");
+            document.getElementById('resposta').appendChild(a);
+        }
+    </script>
+
+    <div class="recipiente-form1">
+        <form action="" method="post" class="painel-form1">
+            <p class="instrucao-form1">Digite uma temperatura:</p>
+            <br>
+            <input type="number" id="n-temperatura" class="input1-form1">
+            <br><br>
+            <input class="botao-form" type="button" value="Converter de Fahrenheit para Celsius" onclick="converter1()">
+            <br>
+            <input class="botao-form" type="button" value="Converter de Celsius para Fahrenheit" onclick="converter2()">
+            <br>
+            <input class="botao-form" type="button" value="Limpar" onclick="window.location.reload()">
+            <br>
+            <p id="resposta"></p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Atividade de PW</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
